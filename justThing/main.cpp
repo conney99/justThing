@@ -2,6 +2,8 @@
 //  main.cpp
 //  justThing
 //
+//  main controller
+//
 //  Created by 정지원 on 2022/03/17.
 //
 
