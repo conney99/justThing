@@ -24,9 +24,8 @@ typedef struct node {
 } Node;
 
 Node *N;
-Node *top;
 Node *start;
-/*
+
 int push(char *a, int b, int c) {
     N -> user_name = a;
     N -> user_age = b;
@@ -35,29 +34,37 @@ int push(char *a, int b, int c) {
     N = N->next;
     return 0;
 }
- int argc, const char * argv[]
-*/
-int main() {
-    fp = fopen("input.txt", "r");
+ 
+int pop(Node *top,int aa) {
+    for(int ii=0; ii<aa; ii++) {
+        printf("%s ,%d ,%d\n",top->user_name, top->user_age, top->user_studentCode);
+        top = top->next;
+    }
+    return 1;
+}
+
+int main(int argc, const char * argv[]) {
+    fp = fopen("./input.txt", "r");
 
     int i=4; // 나중에 변경, 테스트용 숫자
     int count=0;
     
-    char name[16]={0};
+    
     int age, studentCode;
     
-//    N = (Node *)malloc(sizeof(Node));
-//    start = N;
-    fscanf(fp," %d %d",&age,&studentCode);
-    printf(" , %d , %d",age,studentCode);
+    N = (Node *)malloc(sizeof(Node));
+    start = N;
 
     while(1) {
-        //name = malloc(sizeof(char)*12);
-        
         if(count==i) break;
+        char *name=(char *)malloc(sizeof(char)*15);
+        fscanf(fp,"%s %d %d",name,&age,&studentCode);
+        push(name,age,studentCode);
         count++;
     }
-    free(name);
+    
+    pop(start,i);
+    
     
     return 0;
 }

@@ -31,6 +31,7 @@
 		870091FE27E2FC10004D4153 /* server.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = server.hpp; sourceTree = "<group>"; };
 		8700920127E2FC4F004D4153 /* client.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = client.cpp; sourceTree = "<group>"; };
 		8700920227E2FC4F004D4153 /* client.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = client.hpp; sourceTree = "<group>"; };
+		87BE260127E41DF90021BF26 /* input.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = input.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +64,7 @@
 		870091F127E2F895004D4153 /* justThing */ = {
 			isa = PBXGroup;
 			children = (
+				87BE260127E41DF90021BF26 /* input.txt */,
 				870091F227E2F895004D4153 /* main.cpp */,
 				870091FD27E2FC10004D4153 /* server.cpp */,
 				870091FE27E2FC10004D4153 /* server.hpp */,
