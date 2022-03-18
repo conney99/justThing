@@ -10,11 +10,11 @@
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
-//#include "server.hpp"
-//#include "client.hpp"
+
 #define _CRT_SECURE_NO_WARNINGS
 
-FILE *fp;
+FILE *fr;
+FILE *fw;
 
 typedef struct node {
     char *user_name;
@@ -36,34 +36,32 @@ int push(char *a, int b, int c) {
 }
  
 int pop(Node *top,int aa) {
+    fw = fopen("output.txt", "w");
     for(int ii=0; ii<aa; ii++) {
-        printf("%s ,%d ,%d\n",top->user_name, top->user_age, top->user_studentCode);
+        fprintf(fw,"%s ,%d ,%d\n",top->user_name, top->user_age, top->user_studentCode);
         top = top->next;
     }
     return 1;
 }
 
 int main(int argc, const char * argv[]) {
-    fp = fopen("./input.txt", "r");
+    fr = fopen("input.txt", "r");
 
-    int i=4; // 나중에 변경, 테스트용 숫자
     int count=0;
-    
-    
     int age, studentCode;
     
     N = (Node *)malloc(sizeof(Node));
     start = N;
 
     while(1) {
-        if(count==i) break;
         char *name=(char *)malloc(sizeof(char)*15);
-        fscanf(fp,"%s %d %d",name,&age,&studentCode);
+        fscanf(fr,"%s %d %d",name,&age,&studentCode);
+        if(feof(fr))break;
         push(name,age,studentCode);
         count++;
     }
     
-    pop(start,i);
+    pop(start,count);
     
     
     return 0;
