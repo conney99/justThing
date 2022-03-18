@@ -10,8 +10,8 @@
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
-#include "server.hpp"
-#include "client.hpp"
+//#include "server.hpp"
+//#include "client.hpp"
 #define _CRT_SECURE_NO_WARNINGS
 
 FILE *fp;
@@ -26,33 +26,38 @@ typedef struct node {
 Node *N;
 Node *top;
 Node *start;
-
+/*
 int push(char *a, int b, int c) {
-    N -> user_name = malloc(sizeof(char)*12);
     N -> user_name = a;
     N -> user_age = b;
     N -> user_studentCode = c;
     N -> next = (Node *)malloc(sizeof(Node));
     N = N->next;
-    
-    
+    return 0;
 }
+ int argc, const char * argv[]
+*/
+int main() {
+    fp = fopen("input.txt", "r");
 
-int main(int argc, const char * argv[]) {
-    fp = fopen("input.txt","r");
-    
-    int i=4; // 나중에 변경
+    int i=4; // 나중에 변경, 테스트용 숫자
     int count=0;
-    char *name = malloc(sizeof(char)*12);
+    
+    char name[16]={0};
     int age, studentCode;
     
-    N = (Node *)malloc(sizeof(Node));
-    start = N;
+//    N = (Node *)malloc(sizeof(Node));
+//    start = N;
+    fscanf(fp," %d %d",&age,&studentCode);
+    printf(" , %d , %d",age,studentCode);
+
     while(1) {
-        fscanf(fp,"%s,%d,%d",name,age,studentCode);
+        //name = malloc(sizeof(char)*12);
+        
         if(count==i) break;
         count++;
     }
+    free(name);
     
     return 0;
 }

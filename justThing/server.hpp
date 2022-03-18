@@ -9,6 +9,5 @@
 #define server_hpp
 
 #include <stdio.h>
-#include <>
 
 #endif /* server_hpp */
